@@ -17,6 +17,8 @@ terraform {
   backend "s3" {
     #depois trocar o bucket para o meu
     bucket = "descomplicando-terraform-gomex-tfstates" /* todo esse bloco terraform serve para colocar o state no bucket*/
+    dynamodb_table = "terraform-state-lock-dynamo"
+    /*state lock */
     /*O key vai ser o nome do arquivo de estado(state)*/
     key = "terraform-test.tfstate"
     region = "us-east-1"
