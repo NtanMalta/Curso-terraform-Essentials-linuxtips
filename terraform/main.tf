@@ -39,3 +39,22 @@ para atualizar sempres os plugins(provider)*/
 pode ser interesante utilizar o terraform plan -out pois ele vai implantar 100% do que voce viu no init */
 
 /*Apois isso, pode utilizar o terraform apply (nome do arquivo)*/
+
+/*O comando terraform state pull > nomedoarquivo.tfstate ele faz uma copia do state que ficar no bucket para o um
+arquivo local*/
+
+/*O Terraform já executa um refresh automático em memória por padrão antes de rodar 
+comandos como terraform plan e terraform apply
+sendo assim o comando terraform refresh é considerado obsoleto para operação usada para sincronizar o arquivo de estado (.tfstate)
+do Terraform com o estado real dos recursos no provedor de nuvem (como AWS, Azure ou GCP). Ele consulta a API real para atualizar
+o registro interno sem alterar a infraestrutura física. */
+
+/*O comando terraform state list lista todos os recurso que o terraform esta gerenciando*/
+
+/*O comando terraform state mv serve para renomear um recurso
+EX.. terraform state mv(nome atual do recurso) (novo nome para o recurso)
+se eu modificar o nome e nao modificar tambem no arquivo, o terraform vai destruir esse segundo arquivo*/
+
+/*O comando terraform state rm serve para dizer ao Terraform para esquecer um recurso. 
+Ele remove o item do seu arquivo de estado para que o Terraform
+não tente mais gerenciá-lo, ele não destroi esse recurso e sim so para de utilizar ele.*/
