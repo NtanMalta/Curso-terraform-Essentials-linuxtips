@@ -3,7 +3,9 @@
 por exemplo, estou utilizando provider aws (arquivo descritivo)
 nisso ele ta se comunicando a aws o que eu quero usar, a region e a version*/
 provider "aws" {
-  region = "us-east-1"
+  region = "${terraform.workspace == "production" ? "us-east-1" : "us-east-2" }"
+  /*colocar o workspace em duas regioes diferentes*/
+
 }
 
 provider "aws" {
@@ -57,4 +59,26 @@ se eu modificar o nome e nao modificar tambem no arquivo, o terraform vai destru
 
 /*O comando terraform state rm serve para dizer ao Terraform para esquecer um recurso. 
 Ele remove o item do seu arquivo de estado para que o Terraform
-não tente mais gerenciá-lo, ele não destroi esse recurso e sim so para de utilizar ele.*/
+não tente mais gerenciá-lo, ele não destroi esse recurso e sim so para de utilizar ele .*/
+
+/*O comando terraform import serve para importar infraestrutura existente
+EX.. terraform import (nome da instancia).(qualquer nome) (e o ID da instancia)*/
+
+/*Os workspaces no Terraform são como "ambientes paralelos" para o seu estado. Eles permitem que você gerencie
+diferentes coleções de infraestrutura usando exatamente
+o mesmo conjunto de arquivos de código*/
+
+/*
+workspaces é justamente permitir que você implante várias "instâncias" (ou cópias) da sua
+infraestrutura usando o mesmo
+bloco de configuração de backend no seu código.*/
+
+/*mas se fizer um destroy ele literalmente vai destruir o backend*/
+
+/*terraform workspace new dev (Cria um novo workspace chamado "dev" e muda para ele)
+
+terraform workspace select prod (Muda para o workspace "prod")
+
+terraform workspace list (Mostra todos os workspaces disponíveis)
+
+terraform workspace show (Mostra em qual você está agora)*/
