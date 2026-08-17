@@ -48,6 +48,10 @@ data "aws_ami" "ubuntu-west-2" {
 
 /*esse bloco resource foi criado utilizando a logica dos multiplos providers*/
 resource "aws_instance" "web-west-2" {
+
+  count = var.servers
+/* A utilização do count é a possbilidade de criar mais de um recurso com as mesmas configurações*/
+
   provider = aws.west-2 /*esse west-2 é o nome do alias que declarei no main*/
 
   ami = data.aws_ami.ubuntu-west-2.id

@@ -24,6 +24,9 @@ sensitive = true
 
 }
 
+variable "servers" {
+  
+}
 /*O type constraints é a idea de voce forçar o valor que passou pelo o default
 ou pelo proprio variable, dizer qual tipo desse valor*/
 
