@@ -24,6 +24,8 @@ terraform {
     /*O key vai ser o nome do arquivo de estado(state)*/
     key = "terraform-test.tfstate"
     region = "us-east-1"
+    encrypt = true
+    /*serve para eu proteger os dados do state junto com o .gitignore para nao mandar para o repositorio*/
   }
 }
 
