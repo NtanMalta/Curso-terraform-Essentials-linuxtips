@@ -1,7 +1,7 @@
 module "servers" {
   source = "./servers"
   servers = 2
-  
+
 
   /*Esse providers dentro do modulo é uma forma de uilizar o providers de forma explicita
   dessa forma ele vai criar nessa regiao*/  
