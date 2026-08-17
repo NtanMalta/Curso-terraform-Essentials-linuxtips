@@ -84,3 +84,7 @@ terraform workspace select prod (Muda para o workspace "prod")
 terraform workspace list (Mostra todos os workspaces disponíveis)
 
 terraform workspace show (Mostra em qual você está agora)*/
+
+/*Os workspaces isolam apenas o arquivo de estado (o mapa do Terraform). Eles não criam nenhum tipo de isolamento
+automático dentro do provedor de nuvem
+(AWS, Azure, GCP). O provedor de nuvem nem sabe o que é um "workspace do Terraform".*/
