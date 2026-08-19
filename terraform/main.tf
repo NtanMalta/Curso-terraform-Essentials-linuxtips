@@ -88,3 +88,5 @@ terraform workspace show (Mostra em qual você está agora)*/
 /*Os workspaces isolam apenas o arquivo de estado (o mapa do Terraform). Eles não criam nenhum tipo de isolamento
 automático dentro do provedor de nuvem
 (AWS, Azure, GCP). O provedor de nuvem nem sabe o que é um "workspace do Terraform".*/
+
+/*terraform fmt para organizar e formatar a identaçao do codigo no padrao oficial*/
